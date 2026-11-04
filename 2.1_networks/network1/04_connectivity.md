@@ -10,7 +10,8 @@
 - Which pings were successful?  
 - Which ones failed and why?
 
-All PC's was ping successfuly, and was abble to ping with each other.
-The only IP 192.168.1.123 that did not ping becouse it an non-existing IP it faild on the test. 
+### 4.1 Ping Test Results
+
+The ping tests were successful, confirming that all five PCs could communicate with each other within the LAN. The ping to a non-existing IP address failed because no device was assigned that address.
 
 <img width="690" height="591" alt="image" src="https://github.com/user-attachments/assets/91f2ea9e-3422-40de-8786-de06d79e8a07" />
