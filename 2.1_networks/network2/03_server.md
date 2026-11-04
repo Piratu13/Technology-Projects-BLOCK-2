@@ -5,7 +5,8 @@
 Describe how you configured the server's static IP.
 
 
-📸 **Screenshot: Server IP configuration**
+<img width="687" height="582" alt="image" src="https://github.com/user-attachments/assets/605a080b-ace6-45c9-a71f-d36672506821" />
+
 
 ---
 
