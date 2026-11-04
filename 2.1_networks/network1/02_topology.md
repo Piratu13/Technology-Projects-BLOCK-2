@@ -5,7 +5,7 @@
 ### 2.1 Devices Used
 List all devices added to your Packet Tracer workspace.
 
-The devices used for my Network Popology are:
+The devices used for my Network Topology are:
 Switch 2960,
 PC0,
 PC1,
