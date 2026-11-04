@@ -6,12 +6,12 @@
 List all devices added to your Packet Tracer workspace.
 
 The devices used for my Network Popology are:
-Switch 2960
-PC0
-PC1
-PC2
-PC3
-PC4
+Switch 2960,
+PC0,
+PC1,
+PC2,
+PC3,
+PC4.
 
 ### 2.2 Topology Screenshot
 Insert your topology screenshot (saved inside `images/`).
