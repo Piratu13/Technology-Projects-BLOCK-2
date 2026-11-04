@@ -20,5 +20,6 @@ Describe whether DNS resolved the hostname correctly.
 Describe the IPs assigned to each PC.  
 Do they match the DHCP pool?
 
-📸 **Screenshot: `ipconfig /all`**
+<img width="695" height="721" alt="image" src="https://github.com/user-attachments/assets/178f0146-2bca-4ee7-9eb0-3687ab3d0848" />
+
 
