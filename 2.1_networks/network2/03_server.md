@@ -19,7 +19,13 @@ Using a static IP address ensures that the server keeps the same address so othe
 ### 3.2 DHCP Configuration  
 Describe the DHCP pool you created (gateway, DNS, start IP, etc).
 
-📸 **Screenshot: DHCP settings**
+I configured manually a DHCP pool called serverPool on Server0 using Cisco Packet Tracer.
+The DHCP pool is configured to automatically assign IP addresses from 192.168.2.100 to 192.168.2.149.
+
+This allows the three PCs to obtain their network settings automatically instead of manually configuring each computer.
+
+<img width="684" height="582" alt="image" src="https://github.com/user-attachments/assets/d94d39ba-28e6-43ab-92f6-abe025cd4c69" />
+
 
 
 ---
