@@ -38,8 +38,8 @@ Do they match the DHCP pool?
 I verified the DHCP configuration using the ipconfig /all command in Cisco Packet Tracer.
 
 The three PCs successfully received their IP addresses automatically from the DHCP server.
-PC0 --> 192.168.2.100 --> Successful, /n
-PC1 --> 192.168.2.102 --> Successful, /n
+PC0 --> 192.168.2.100 --> Successful, 
+PC1 --> 192.168.2.102 --> Successful,
 PC2 --> 192.168.2.101 --> Successful.
 
 All three PCs received the subnet mask 255.255.255.0, default gateway 192.168.2.1, and DNS server 192.168.2.2.
