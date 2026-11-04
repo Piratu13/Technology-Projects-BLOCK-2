@@ -13,3 +13,4 @@
 ```
 images/ip-config-pc0.png
 ```
+<img width="691" height="584" alt="image" src="https://github.com/user-attachments/assets/7c634bd0-8e59-4a28-9eca-71ed3b7ec7cf" />
