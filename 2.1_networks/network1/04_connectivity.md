@@ -10,5 +10,7 @@
 - Which pings were successful?  
 - Which ones failed and why?
 
-_Write your explanation here…_
+All PC's was ping successfuly, and was abble to ping with each other.
+The only IP 192.168.1.123 that did not ping becouse it an non-existing IP it faild on the test. 
 
+<img width="690" height="591" alt="image" src="https://github.com/user-attachments/assets/91f2ea9e-3422-40de-8786-de06d79e8a07" />
