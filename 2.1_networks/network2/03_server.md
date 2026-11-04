@@ -3,7 +3,13 @@
 
 ### 3.1 Static IP Settings  
 Describe how you configured the server's static IP.
+### 3.1 Static IP Settings
 
+I configured the server's IP address manually in Cisco Packet Tracer by opening **Server0 → Desktop → IP Configuration** and selecting **Static**.
+
+I entered the IP address `192.168.2.2`, and the subnet mask `255.255.255.0` was filled in automatically. I also manually configured the default gateway as `192.168.2.1`.
+
+Using a static IP address ensures that the server keeps the same address so other devices can reliably access its DHCP and DNS services.
 
 <img width="687" height="582" alt="image" src="https://github.com/user-attachments/assets/605a080b-ace6-45c9-a71f-d36672506821" />
 
