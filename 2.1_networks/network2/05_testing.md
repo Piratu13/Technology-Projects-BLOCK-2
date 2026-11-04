@@ -6,7 +6,8 @@
 Did the PC successfully ping a DNS name (e.g., `library_pc1`)?  
 Explain the result.
 
-📸 **Screenshot of successful ping**
+<img width="687" height="577" alt="image" src="https://github.com/user-attachments/assets/f71df1e6-c1bc-4318-a50d-38b19ac80d91" />
+
 
 ---
 
