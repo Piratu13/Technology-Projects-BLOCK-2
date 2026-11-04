@@ -33,5 +33,13 @@ This allows the three PCs to obtain their network settings automatically instead
 ### 3.3 DNS Configuration  
 Explain how you enabled DNS and created name records.
 
-📸 **Screenshot: DNS service + name entries**
+I configured the DNS service on Server0 in Cisco Packet Tracer by opening Services → DNS and turning the DNS service On.
+
+I created two DNS A records by entering the hostnames and their corresponding IP addresses:
+pc1 --> 192.168.2.100
+pc2 --> 192.168.2.101
+DNS allows computers on the network to use hostnames instead of IP addresses, making communication easier for users.
+
+<img width="688" height="581" alt="image" src="https://github.com/user-attachments/assets/f5eb09d7-cc98-42ff-a59c-f6299d861218" />
+
 
