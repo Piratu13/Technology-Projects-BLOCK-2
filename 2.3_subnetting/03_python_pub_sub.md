@@ -119,15 +119,19 @@ auth = {
 }
 
 # Subscribe to the topic
-subscribe.callback(
-    print_msg,
-    "my test",
-    hostname="HOSTNAME",
-    port=8883,
-    auth=auth,
-    tls=sslSettings,
-    protocol=paho.MQTTv311
-)
+try:
+    subscribe.callback(
+        print_msg,
+        "my test",
+        hostname="HOSTNAME",
+        port=8883,
+        auth=auth,
+        tls=sslSettings,
+        protocol=paho.MQTTv311
+    )
+
+except KeyboardInterrupt:
+    print("\nSubscriber stopped.")
 ```
 
 Again, replace the username, password, hostname and certificate filename with your own details.
