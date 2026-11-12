@@ -1,105 +1,139 @@
+# Connecting Raspberry Pi to EMQX Cloud
+*A Practical Guide to Cloud-Based MQTT Communication*
 
-# Creating a HiveMQ Cloud MQTT Service
-*A Step‑by‑Step Guide for Students and Developers*
-
-This guide explains how to:
-
-1. Create a HiveMQ Cloud account  
-2. Create a Cloud MQTT Cluster  
-3. Create MQTT credentials (username + password)  
-4. Retrieve connection details  
-5. Test your connection with the Web Client  
-
-HiveMQ Cloud provides a free tier suitable for teaching labs and small IoT deployments.  
-The process is based on HiveMQ’s official “Getting Started” documentation.
+**Equipment and software:**
+- Raspberry Pi with Raspberry Pi OS.
+- Internet connection.
+- Python 3.
+- EMQX Cloud account.
+- Paho MQTT Python library.
 
 ---
 
-## 1. Sign Up for HiveMQ Cloud
+## 1. Introduction to EMQX Cloud
 
-1. Go to **https://console.hivemq.cloud**
-2. Click **Sign Up**
-3. Choose a login method: Email, GitHub, Google, or LinkedIn
-4. Confirm your email (if you signed up via email)
-5. Complete your user profile
+EMQX Cloud provides a hosted MQTT broker that allows IoT devices to exchange messages over the internet.
 
-HiveMQ automatically creates an **Organization** for you.
+Unlike a locally installed broker, such as Eclipse Mosquitto, EMQX Cloud runs on remote servers.
 
-> Insert here a screeshot of your landing page.
----
+This means that your Raspberry Pi can communicate with other devices without needing to host its own MQTT broker.
 
-## 2. Create a New HiveMQ Cloud Cluster
+For this activity, we will use the **EMQX Serverless free tier**.
 
-1. Log into the console: https://console.hivemq.cloud
-2. Select **Clusters** in the left navigation
-3. Click **Create Cluster**
-4. Choose a **Cluster Name** (e.g., `MyFirstCluster`)
-5. Select a **Region**
-6. Choose a Plan: **Free / Starter**
-7. Click **Create**
+The current free quota includes:
 
-Cluster deployment takes **2–3 minutes**.
+- 1 million session minutes per month.
+- 1 GB of network traffic per month.
+- 1 million rule actions per month.
 
-> Insert a screenshot of your cluster
+The free quota is subject to EMQX's usage conditions and limits. We will configure the spending limit to zero to avoid charges beyond the free allowance.
 
 ---
 
-## 3. Create MQTT Credentials
+## 2. Create an EMQX Cloud Account
 
-1. Open your Cluster
-2. Go to **Access Management** / **Credentials**
-3. Click **Add Credentials**
-4. Create a **username** and **password**
-5. Save your credentials
+1. Open the EMQX Cloud website:
 
-You may create one per student or per device.
+   https://www.emqx.com/en
 
----
+2. Select the option to register for an account.
+3. Enter your email address and the requested details.
+4. Complete the email verification process.
+5. Log in to the EMQX Cloud Console.
 
-## 4. Retrieve Your MQTT Connection Details
+You may be asked to complete mobile verification during registration.
 
-Your cluster dashboard shows:
-
-```
-Host:     yourclusterid.s1.eu.hivemq.cloud
-Port:     8883 (TLS)
-Username: your_username
-Password: your_password
-```
-
-These values are used in your MQTT scripts.
+> **Insert Screenshot 1:** EMQX Cloud registration or dashboard.
 
 ---
 
-## 5. Test the Broker with the HiveMQ Web Client
+## 3. Create Your First MQTT Deployment
 
-1. Inside your cluster page, open **Web Client**
-2. Fill in:
-   - Host
-   - Port: 8883
-   - Client ID
-   - Username
-   - Password
-3. Click **Connect**
-4. Subscribe to a topic: `test/topic`
-5. Publish a message to the same topic
+After logging in, you need to create a project and an MQTT broker.
 
-You should see your message appear immediately.
+### 3.1 Create a project
 
-> Insert a screenshot of this step.
+1. Open the Overview page.
+2. Select **New Project**.
+3. Enter a project name, for example:
+
+   `University-IoT-Lab`
+
+4. Add a short description if requested.
+5. Select **Confirm**.
+
+### 3.2 Create a Serverless deployment
+
+1. Open your newly created project.
+2. Select **New Deployment**.
+3. Choose the **Serverless** plan.
+4. Configure your deployment:
+   - Deployment name: `student01-broker`
+   - Region: Select a region close to your location.
+   - Spend limit: Leave it at `0` to restrict usage to the free quota.
+5. Review the deployment details.
+6. Accept the usage terms.
+7. Select **Deploy**.
+
+Wait until the deployment status changes to **Running**.
+
+Your MQTT broker is now ready.
+
+> **Insert Screenshot 2:** Serverless deployment creation.
+
+> **Insert Screenshot 3:** Your deployment showing Running status.
 
 ---
 
-## 6. Summary
+## 4. Create MQTT Credentials
 
-After setup, you now have:
+Your Raspberry Pi needs authentication details to connect to the broker.
 
-| Component | Description |
-|----------|-------------|
-| **Cluster** | Fully hosted MQTT broker |
-| **Host URL** | Needed for connecting devices |
-| **Port 8883** | Secure TLS MQTT port |
-| **Credentials** | Authentication for your MQTT clients |
-| **Web Client** | Browser-based MQTT testing |
+1. Open your deployment.
+2. Navigate to **Access Control**.
+3. Select **Authentication**.
+4. Select **Add**.
+5. Enter the following:
+   - Username: `student01`
+   - Password: Create a secure password.
+6. Select **Confirm**.
 
-You can now connect IoT devices such as Raspberry Pi, ESP32, Node‑RED, or Python clients.
+Keep your credentials safe. You will need them when connecting your Raspberry Pi.
+
+> **Insert Screenshot 4:** Authentication configuration.
+
+---
+
+## 5. Retrieve Your MQTT Connection Details
+
+Open the **Overview** page of your deployment.
+
+You should find the following information:
+
+| Parameter | Description |
+|---|---|
+| Host | Your unique EMQX broker address |
+| Port | `8883` |
+| Protocol | MQTT over TLS |
+| Username | Your MQTT username |
+| Password | Your MQTT password |
+
+Your broker address will look similar to:
+
+`xxxxxxxxxx.emqxsl.com`
+
+Use the actual hostname displayed in your account.
+
+### Download the CA certificate
+
+EMQX Serverless requires encrypted connections.
+
+1. Find the CA Certificate option in your deployment Overview.
+2. Download the certificate.
+3. Save it somewhere accessible from your Raspberry Pi.
+
+You will need this certificate to establish a secure connection.
+
+> **Insert Screenshot 5:** Deployment connection details and CA certificate download.
+
+**Important:** Do not use port 1883 for this Serverless deployment. Use port 8883 with TLS encryption.
