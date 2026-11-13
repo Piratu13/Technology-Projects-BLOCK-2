@@ -43,7 +43,7 @@ The free quota is subject to EMQX's usage conditions and limits. We will configu
 
 You may be asked to complete mobile verification during registration.
 
-> **Insert Screenshot 1:** EMQX Cloud registration or dashboard.
+<img width="1903" height="1073" alt="image" src="https://github.com/user-attachments/assets/c94eb053-cc5b-43e2-a657-b309ae729157" />
 
 ---
 
