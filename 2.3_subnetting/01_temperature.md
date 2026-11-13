@@ -2,7 +2,7 @@
 
 ## Temperature from the terminal
 
-Here, we are using the Pi as if it was a temomether. To do so, let's track its temperature. Open a terminal and type:
+Here, we are using the Pi as if it was a thermometer. To do so, let's track its temperature. Open a terminal and type:
 
 ```bash
 vcgencmd measure_temp
